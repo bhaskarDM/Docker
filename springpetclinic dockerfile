@@ -1,0 +1,4 @@
+from openjdk:11
+add https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar /spring-petclinic.jar
+expose 8080
+cmd ["java","-jar","/spring-petclinic.jar"]
