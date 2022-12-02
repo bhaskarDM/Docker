@@ -1,0 +1,7 @@
+from mcr.microsoft.com/dotnet/aspnet:3.1-focal
+run mkdir /usr/share/nop && apt update && apt install unzip
+workdir /usr/share/nop
+add https://github.com/nopSolutions/nopCommerce/releases/download/release-4.50.4/nopCommerce_4.50.4_NoSource_linux_x64.zip /usr/share/nop
+run unzip nopCommerce_4.50.4_NoSource_linux_x64.zip
+cmd ["/usr/bin/dotnet","/usr/share/nop/Nop.Web.dll"]
+expose 80
